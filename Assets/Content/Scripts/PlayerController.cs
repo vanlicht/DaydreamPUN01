@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Photon.MonoBehaviour
 {
     public GameObject gvrControllerPointer;
     public GameObject head;
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Controllable");
             //teleportEvent addlistener only works if it's new added. if the player starts at the same time as the teleport controller, error occur.
+
             TeleportEvent teleportEvent = GameObject.Find("TeleportController").GetComponent<ThomasTeleportController>().teleportEvent;
             teleportEvent.AddListener(HandleTeleportEvent);
             playerCamera.SetActive(true);
@@ -32,7 +33,8 @@ public class PlayerController : MonoBehaviour
             gvrControllerPointer.SetActive(false);
             DestroyImmediate(playerCamera.GetComponent<GvrAudioListener>());
         }
-	}
+
+    }
 
     private void HandleTeleportEvent(Vector3 worldPos)
     {

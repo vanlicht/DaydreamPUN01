@@ -5,14 +5,20 @@ using UnityEngine;
 public class GameManager : Photon.PunBehaviour
 {
     public GameObject playerPrefab;
-    private GameObject currentPlayer;
+    //private GameObject currentPlayer;
 
     #region MonoBehaviour Callbacks
     // Use this for initialization
     void Start ()
     {
-        currentPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
-        currentPlayer.GetComponent<PlayerController>().isControllable = true;
+        if (PlayerManager.localPlayerInstance == null)
+        {
+            GameObject currentPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
+            currentPlayer.GetComponent<PlayerController>().isControllable = true;
+            Debug.Log(".............................clone created...");
+        }
+        //currentPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
+        //currentPlayer.GetComponent<PlayerController>().isControllable = true;
     }
 
     private void Update()
@@ -40,10 +46,6 @@ public class GameManager : Photon.PunBehaviour
     #endregion
 
     #region PUN Callbacks
-    public override void OnJoinedRoom()
-    {
-        Debug.Log("Thomas...Game Manager: OnJoinedRoom");
-    }
 
     public override void OnLeftRoom()
     {

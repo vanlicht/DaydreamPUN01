@@ -38,10 +38,12 @@ public class PhotonCommsManager : Photon.PunBehaviour
         PhotonNetwork.autoJoinLobby = false;
         PhotonNetwork.automaticallySyncScene = true;
     }
+
     void Start ()
     {
         controlPanel.SetActive(true);
         progressLabel.SetActive(false);
+        TConnect();
     }
 
     private void Update()
@@ -105,14 +107,19 @@ public class PhotonCommsManager : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         Debug.Log("Thomas...PhotonCommManager: OnJoinedRoom");
-        //DestroyImmediate(lobbyPlayer);
+        
         if (PhotonNetwork.isMasterClient)
         {
             LoadWorld();
         }
+        //DestroyImmediate(lobbyPlayer);
+        else
+        {
+            //currentPlayer = PhotonNetwork.Instantiate(networkPlayer.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
+            //currentPlayer.GetComponent<PlayerController>().isControllable = true;
+        }
+        
 
-        //currentPlayer = PhotonNetwork.Instantiate(networkPlayer.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
-        //currentPlayer.GetComponent<PlayerController>().isControllable = true;
     }
 
     public override void OnLeftRoom()

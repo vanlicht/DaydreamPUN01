@@ -16,7 +16,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Collider))]
-public class Teleport : MonoBehaviour {
+public class Teleport : Photon.MonoBehaviour {
   private Vector3 startingPosition;
 
   public Material inactiveMaterial;
@@ -39,10 +39,15 @@ public class Teleport : MonoBehaviour {
     transform.localPosition = startingPosition;
   }
 
-  public void TeleportRandomly() {
-    Vector3 direction = Random.onUnitSphere;
-    direction.y = Mathf.Clamp(direction.y, 0.5f, 1f);
-    float distance = 2 * Random.value + 1.5f;
-    transform.localPosition = direction * distance;
+  public void TeleportRandomly()
+    {
+        if (!photonView.isMine)
+        {
+            return;
+        }
+        Vector3 direction = Random.onUnitSphere;
+        direction.y = Mathf.Clamp(direction.y, 0.5f, 1f);
+        float distance = 2 * Random.value + 1.5f;
+        transform.localPosition = direction * distance;
   }
 }

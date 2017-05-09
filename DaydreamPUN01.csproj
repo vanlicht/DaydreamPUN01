@@ -79,6 +79,12 @@
     <Reference Include="Mono.Cecil">
       <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>Assets\Plugins\Google.ProtocolBuffers.dll</HintPath>
     </Reference>
@@ -102,6 +108,7 @@
     <Compile Include="Assets\Content\Scripts\PhotonCommsManager.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Content\Scripts\PlayerNameInput.cs" />
     <Compile Include="Assets\Content\Scripts\ThomasTeleportController.cs" />
     <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoInputManager.cs" />
     <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoSceneManager.cs" />

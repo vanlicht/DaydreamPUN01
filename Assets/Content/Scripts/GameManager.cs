@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : Photon.PunBehaviour
 {
     public GameObject playerPrefab;
-    //private GameObject currentPlayer;
+    private GameObject currentPlayer;
 
     #region MonoBehaviour Callbacks
     // Use this for initialization
@@ -13,9 +13,13 @@ public class GameManager : Photon.PunBehaviour
     {
         if (PlayerManager.localPlayerInstance == null)
         {
-            GameObject currentPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
+            currentPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
             currentPlayer.GetComponent<PlayerController>().isControllable = true;
             Debug.Log(".............................clone created...");
+        }
+        else
+        {
+            Debug.Log(".............................player already exist so clone not created...");
         }
         //currentPlayer = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
         //currentPlayer.GetComponent<PlayerController>().isControllable = true;
@@ -54,14 +58,19 @@ public class GameManager : Photon.PunBehaviour
 
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
-        if (PhotonNetwork.isMasterClient)
-        {
-            //load new scene
-            if (PhotonNetwork.room.PlayerCount > 1)
-            {
-                LoadWorld();
-            }
-        }
+        /*
+          THOMAS: It seems here is where the problem of duplicate clones occur...
+          based on the playerName, it's the MasterClient's clon that got duplicated every time other users log in
+          even though this is how it's written in the PUN basic tutorial
+        */
+        //if (PhotonNetwork.isMasterClient)
+        //{
+        //    //load new scene
+        //    if (PhotonNetwork.room.PlayerCount > 1)
+        //    {
+        //        LoadWorld();
+        //    }
+        //}
     }
 
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)

@@ -43,7 +43,6 @@ public class PhotonCommsManager : Photon.PunBehaviour
     {
         controlPanel.SetActive(true);
         progressLabel.SetActive(false);
-        TConnect();
     }
 
     private void Update()

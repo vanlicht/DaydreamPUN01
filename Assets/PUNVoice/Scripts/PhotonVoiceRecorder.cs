@@ -11,8 +11,8 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class PhotonVoiceRecorder : Photon.MonoBehaviour
 {
-    //Thomas
-    public Text audioText;
+    ////Thomas
+    //public Text audioText;
 
     private Voice.LocalVoice voice = Voice.LocalVoice.Dummy;
     
@@ -166,8 +166,8 @@ public class PhotonVoiceRecorder : Photon.MonoBehaviour
     {
         if (photonView.isMine)
         {
-            //Thomas
-            audioText.text = "Device Num: " + Microphone.devices.Count();
+            ////Thomas
+            //audioText.text = "Device Num: " + Microphone.devices.Count();
             
         }
     }

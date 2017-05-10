@@ -14,20 +14,30 @@
 
 using UnityEngine;
 using System.Collections;
+using System;
 
 [RequireComponent(typeof(Collider))]
-public class Teleport : Photon.MonoBehaviour {
+public class Teleport : Photon.MonoBehaviour, IPunObservable
+{
   private Vector3 startingPosition;
 
   public Material inactiveMaterial;
   public Material gazedAtMaterial;
 
+    private AudioSource audioSrc;
+    public bool isAudioPlay;
+
   void Start() {
     startingPosition = transform.localPosition;
     SetGazedAt(false);
-  }
 
-  public void SetGazedAt(bool gazedAt) {
+        audioSrc = this.GetComponent<AudioSource>();
+  }
+    private void Update()
+    {
+        PlayCubeSound(isAudioPlay);
+    }
+    public void SetGazedAt(bool gazedAt) {
     if (inactiveMaterial != null && gazedAtMaterial != null) {
       GetComponent<Renderer>().material = gazedAt ? gazedAtMaterial : inactiveMaterial;
       return;
@@ -44,10 +54,32 @@ public class Teleport : Photon.MonoBehaviour {
         if (!photonView.isMine)
         {
             return;
+
+
         }
-        Vector3 direction = Random.onUnitSphere;
+        Vector3 direction = UnityEngine.Random.onUnitSphere;
         direction.y = Mathf.Clamp(direction.y, 0.5f, 1f);
-        float distance = 2 * Random.value + 1.5f;
+        float distance = 2 * UnityEngine.Random.value + 1.5f;
         transform.localPosition = direction * distance;
   }
+
+    void PlayCubeSound(bool isAudioPlay)
+    {
+        if (isAudioPlay)
+        {
+            audioSrc.Play();
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(isAudioPlay);
+        }
+        else
+        {
+            isAudioPlay = (bool)stream.ReceiveNext();
+        }
+    }
 }

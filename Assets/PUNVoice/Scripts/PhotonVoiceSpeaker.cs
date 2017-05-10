@@ -3,7 +3,7 @@
 /// <summary>
 /// Component representing remote audio stream in local scene. Automatically attached to the PUN object which owner's instance has streaming Recorder attached.
 /// </summary>
-[RequireComponent(typeof (GvrAudioSource))]
+[RequireComponent(typeof (AudioSource))]
 [DisallowMultipleComponent]
 public class PhotonVoiceSpeaker : Photon.MonoBehaviour
 {
@@ -23,7 +23,7 @@ public class PhotonVoiceSpeaker : Photon.MonoBehaviour
 
     void Awake()
     {
-        this.player = new AudioStreamPlayer(GetComponent<GvrAudioSource>(), "PUNVoice: PhotonVoiceSpeaker:", PhotonVoiceSettings.Instance.DebugInfo);
+        this.player = new AudioStreamPlayer(GetComponent<AudioSource>(), "PUNVoice: PhotonVoiceSpeaker:", PhotonVoiceSettings.Instance.DebugInfo);
         PhotonVoiceNetwork.LinkSpeakerToRemoteVoice(this);
     }
 

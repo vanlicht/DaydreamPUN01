@@ -17,7 +17,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           android:versionCode="1"
           android:versionName="1.0"
-          package="com.google.vr.cardboard.unity.TreasureHunt"
+          package="com.eightNinths.DaydreamPUN"
           android:installLocation="preferExternal">
 
     <supports-screens
@@ -50,6 +50,9 @@
             </intent-filter>
 
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+            <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="false" />
         </activity>
     </application>
+    <uses-permission
+        android:name="android.permission.RECORD_AUDIO" />
 </manifest>

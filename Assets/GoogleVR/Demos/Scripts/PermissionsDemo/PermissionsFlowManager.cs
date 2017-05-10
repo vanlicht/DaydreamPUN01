@@ -70,5 +70,11 @@ public class PermissionsFlowManager : MonoBehaviour {
       statusText.text = "ExternalStorage permission already granted!";
     }
   }
+
+    private void Start()
+    {
+        GvrPermissionsRequester permissionRequester = GvrPermissionsRequester.Instance;
+        Debug.Log(permissionRequester);
+    }
 }
 #endif  // (UNITY_ANDROID || UNITY_EDITOR)

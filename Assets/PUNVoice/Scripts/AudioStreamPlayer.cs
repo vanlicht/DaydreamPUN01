@@ -18,16 +18,16 @@ public class AudioStreamPlayer
     public int CurrentBufferLag { get; private set; }
 
     /// <summary>Returns AudioSource object passed by user in constructor.</summary>
-    public GvrAudioSource audioSource { get { return this.source; } }
+    public AudioSource audioSource { get { return this.source; } }
 
     // jitter-free stream position
     private int streamSamplePosAvg;
 
-    private GvrAudioSource source;
+    private AudioSource source;
     private string logPrefix;
     private bool debugInfo;
 
-    public AudioStreamPlayer(GvrAudioSource audioSource, string logPrefix, bool debugInfo)
+    public AudioStreamPlayer(AudioSource audioSource, string logPrefix, bool debugInfo)
     {
         this.source = audioSource;
         this.logPrefix = logPrefix;

@@ -27,7 +27,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -219,6 +219,39 @@
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrIntent.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\BaseController.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\BetterToggle.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\ChangePOV.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\CharacterInstantiation.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\Highlighter.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\MouseLookHelper.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\OrthographicController.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\PushToTalkPrivateButton.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\PushToTalkScript.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\SoundsForJoinAndLeave.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Scripts\VoiceDemoUI.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+    <Compile Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\AudioClipWrapper.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\AudioStreamPlayer.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\MicWrapper.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\PhotonVoiceNetwork.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\PhotonVoiceRecorder.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\PhotonVoiceSettings.cs" />
+    <Compile Include="Assets\PUNVoice\Scripts\PhotonVoiceSpeaker.cs" />
+    <Compile Include="Assets\PUNVoice\TestVoice\Gui.cs" />
+    <Compile Include="Assets\PUNVoice\TestVoice\HighlightRecorder.cs" />
+    <Compile Include="Assets\PUNVoice\TestVoice\HighlightSpeaker.cs" />
+    <Compile Include="Assets\PUNVoice\TestVoice\ViewDrag.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs" />
@@ -238,6 +271,7 @@
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\RPC.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Room.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\RoomInfo.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\RpcIndexComponent.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\ServerSettings.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\SocketUdp.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\SocketWebTcp.cs" />
@@ -253,11 +287,15 @@
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewScaleModel.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ConnectAndJoinRandom.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\CullArea.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\HighlightOwnedGameObj.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\InRoomChat.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\InRoomRoundTimer.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\InRoomTime.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\InputToEvent.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ManualPhotonViewAllocator.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\MoveByKeys.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\NetworkCullingHandler.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnAwakeUsePhotonView.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnClickDestroy.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnClickInstantiate.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnClickLoadSomething.cs" />
@@ -272,6 +310,8 @@
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PunTeams.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PunTurnManager.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\QuitOnEscapeOrBack.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ServerTime.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ShowInfoOfPlayer.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ShowStatusWhenConnecting.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SmoothSyncMovement.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
@@ -297,6 +337,13 @@
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTextureOverlay.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlay.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlayColor.shader" />
+    <None Include="Assets\PUNVoice\DemoVoice\Audio\Pop-J_Fairba-8421_hifi.mp3.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Audio\Reminder-public_d-291_hifi.mp3.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Fonts\Orbitron Black.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\PUNVoice\DemoVoice\Textures\SkyBox-Texture.txt" />
+    <None Include="Assets\PUNVoice\changelog.txt" />
+    <None Include="Assets\PUNVoice\readme.txt" />
     <None Include="Assets\Photon Unity Networking\changelog.txt" />
     <None Include="Assets\Photon Unity Networking\link.xml" />
     <None Include="Assets\Photon Unity Networking\readme.txt" />

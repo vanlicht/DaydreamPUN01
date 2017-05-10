@@ -26,12 +26,12 @@ public class PlayerController : Photon.MonoBehaviour
             gvrControllerPointer.SetActive(true);
             head.SetActive(false);
             otherPlayersController.SetActive(false);
+            playerCamera.AddComponent<GvrAudioListener>();
         }
         else
         {
             playerCamera.SetActive(false);
             gvrControllerPointer.SetActive(false);
-            DestroyImmediate(playerCamera.GetComponent<GvrAudioListener>());
         }
 
     }

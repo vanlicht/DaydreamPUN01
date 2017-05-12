@@ -79,12 +79,6 @@
     <Reference Include="Mono.Cecil">
       <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>Assets\Plugins\Google.ProtocolBuffers.dll</HintPath>
     </Reference>
@@ -102,13 +96,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Content\Scripts\CubeManager.cs" />
+    <Compile Include="Assets\Content\Scripts\ClickToChangeOwnership.cs" />
     <Compile Include="Assets\Content\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Content\Scripts\IconBehaviour.cs" />
+    <Compile Include="Assets\Content\Scripts\IconMovement.cs" />
     <Compile Include="Assets\Content\Scripts\NetworkPlayer.cs" />
     <Compile Include="Assets\Content\Scripts\PhotonCommsManager.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerNameInput.cs" />
+    <Compile Include="Assets\Content\Scripts\SendTextColor.cs" />
+    <Compile Include="Assets\Content\Scripts\TestSphere.cs" />
     <Compile Include="Assets\Content\Scripts\ThomasTeleportController.cs" />
     <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoInputManager.cs" />
     <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoSceneManager.cs" />
@@ -321,6 +319,7 @@
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\UI\TextToggleIsOnTransition.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Content\Shaders\IconBubble.shader" />
     <None Include="Assets\GoogleVR\Demos\Environment\DemoEnvUnlitGrayscale.shader" />
     <None Include="Assets\GoogleVR\Demos\Shaders\GVRDemo\GVRDemoAmbientOcclusion.shader" />
     <None Include="Assets\GoogleVR\Demos\Shaders\GVRDemo\GVRDemoUnlitGrayscaleToColor.shader" />

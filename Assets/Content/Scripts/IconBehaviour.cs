@@ -20,6 +20,10 @@ public class IconBehaviour : Photon.MonoBehaviour, IPunObservable
 	// Update is called once per frame
 	void Update ()
     {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            isTriggered = true;
+        }
         if (isTriggered)
         {
             Debug.Log("........................ShowHideIcon()");

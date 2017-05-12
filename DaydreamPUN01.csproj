@@ -111,6 +111,8 @@
     <Compile Include="Assets\Content\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerNameInput.cs" />
+    <Compile Include="Assets\Content\Scripts\SendTextColor.cs" />
+    <Compile Include="Assets\Content\Scripts\T_NWTest01.cs" />
     <Compile Include="Assets\Content\Scripts\ThomasTeleportController.cs" />
     <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoInputManager.cs" />
     <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoSceneManager.cs" />

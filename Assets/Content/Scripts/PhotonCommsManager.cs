@@ -43,6 +43,9 @@ public class PhotonCommsManager : Photon.PunBehaviour
     {
         controlPanel.SetActive(true);
         progressLabel.SetActive(false);
+
+        //Thomas: Only for Test
+        TConnect();
     }
 
     private void Update()
@@ -107,17 +110,15 @@ public class PhotonCommsManager : Photon.PunBehaviour
     {
         Debug.Log("Thomas...PhotonCommManager: OnJoinedRoom");
         
-        if (PhotonNetwork.isMasterClient)
-        {
-            LoadWorld();
-        }
-        //DestroyImmediate(lobbyPlayer);
-        else
-        {
-            //currentPlayer = PhotonNetwork.Instantiate(networkPlayer.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
-            //currentPlayer.GetComponent<PlayerController>().isControllable = true;
-        }
-        
+        //Thomas: Un-comment once test is done.
+        //if (PhotonNetwork.isMasterClient)
+        //{
+        //    LoadWorld();
+        //}
+
+        //Thomas Only for Test
+        currentPlayer = PhotonNetwork.Instantiate(networkPlayer.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);
+        currentPlayer.GetComponent<PlayerController>().isControllable = true;
 
     }
 

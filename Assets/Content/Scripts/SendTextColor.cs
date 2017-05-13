@@ -28,21 +28,8 @@ public class SendTextColor : Photon.MonoBehaviour, IPunObservable
         }
     }
 
-    public void OnGlow()
-    {
-
-        Debug.Log(".......................TOnGlow");
-        if (isSwitch)
-        {
-            mat.SetColor("_EmissionColor", Color.red);
-        }
-        else
-        {
-            mat.SetColor("_EmissionColor", Color.black);
-        }
-    }
     [PunRPC]
-    public void PunOnGlow()
+    public void T_PunRPC_PunOnGlow()
     {
 
         Debug.Log(".......................TOnGlow");

@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Content\Scripts\ClickToChangeOwnership.cs" />
+    <Compile Include="Assets\Content\Scripts\EngineBelt.cs" />
     <Compile Include="Assets\Content\Scripts\GameManager.cs" />
     <Compile Include="Assets\Content\Scripts\IconBehaviour.cs" />
     <Compile Include="Assets\Content\Scripts\IconMovement.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Content\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerNameInput.cs" />
     <Compile Include="Assets\Content\Scripts\SendTextColor.cs" />
+    <Compile Include="Assets\Content\Scripts\TPlayAnimation.cs" />
     <Compile Include="Assets\Content\Scripts\TestSphere.cs" />
     <Compile Include="Assets\Content\Scripts\ThomasTeleportController.cs" />
     <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoInputManager.cs" />

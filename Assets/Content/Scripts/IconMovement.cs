@@ -42,9 +42,12 @@ public class IconMovement : MonoBehaviour
 
     public void disableSelf()
     {
-        isActive = false;
-        StartCoroutine(showIconAnim());
-        StopCoroutine(showIconAnim());  
+        if (this.gameObject.GetActive())
+        {
+            isActive = false;
+            StartCoroutine(showIconAnim());
+            StopCoroutine(showIconAnim());
+        }
     }
     IEnumerator showIconAnim()
     {

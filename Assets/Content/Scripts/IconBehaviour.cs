@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class IconBehaviour : Photon.MonoBehaviour, IPunObservable
 {
 
     public GameObject targetIcon;
     private Vector3 startPosition;
+    public Text textLog;
 
     bool isVisible;
 
     // Use this for initialization
     void Start ()
     {
-        
 
     }
 	
@@ -24,27 +25,42 @@ public class IconBehaviour : Photon.MonoBehaviour, IPunObservable
         {
             ShowHideIcon();
         }
+
+        //this.photonView.RPC("RPCShowHideIcon", PhotonTargets.AllBufferedViaServer);
+
+        textLog.text = "isVisible: " + isVisible;
     }
 
     public void ShowHideIcon()
     {
-        if (!isVisible)
+        if (photonView.isMine)
         {
-            targetIcon.SetActive(true);
-            isVisible = true;
+            
+            isVisible = !isVisible;
+            
+        }
+        
+    }
+
+    [PunRPC]
+    public void RPCShowHideIcon()
+    {
+        if (isVisible)
+        {
+            targetIcon.SetActive(isVisible);
         }
         else
         {
             targetIcon.GetComponentInChildren<IconMovement>().disableSelf();
-            isVisible = false;
         }
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        if (photonView.isMine)
+        if (stream.isWriting)
         {
             stream.SendNext(isVisible);
+            this.photonView.RPC("RPCShowHideIcon", PhotonTargets.AllBufferedViaServer);
         }
         else
         {

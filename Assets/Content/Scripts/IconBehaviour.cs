@@ -35,9 +35,7 @@ public class IconBehaviour : Photon.MonoBehaviour, IPunObservable
     {
         if (photonView.isMine)
         {
-            
             isVisible = !isVisible;
-            
         }
         
     }
@@ -47,11 +45,15 @@ public class IconBehaviour : Photon.MonoBehaviour, IPunObservable
     {
         if (isVisible)
         {
+            //Turn on the target icon
             targetIcon.SetActive(isVisible);
+            Debug.Log("...............IconBehaviour 01");
         }
         else
         {
+            //Turn off the target icon
             targetIcon.GetComponentInChildren<IconMovement>().disableSelf();
+            Debug.Log("...............IconBehaviour 02");
         }
     }
 
@@ -60,7 +62,8 @@ public class IconBehaviour : Photon.MonoBehaviour, IPunObservable
         if (stream.isWriting)
         {
             stream.SendNext(isVisible);
-            this.photonView.RPC("RPCShowHideIcon", PhotonTargets.AllBufferedViaServer);
+            this.photonView.RPC("RPCShowHideIcon", PhotonTargets.All);
+            Debug.Log("...............IconBehaviour 03");
         }
         else
         {

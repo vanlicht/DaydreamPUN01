@@ -109,12 +109,12 @@ public class PhotonCommsManager : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         Debug.Log("Thomas...PhotonCommManager: OnJoinedRoom");
-        
-        //Thomas: Un-comment once test is done.
-        //if (PhotonNetwork.isMasterClient)
-        //{
-        //    LoadWorld();
-        //}
+
+        ////Thomas: Un - comment once test is done.
+        //    if (PhotonNetwork.isMasterClient)
+        //    {
+        //        LoadWorld();
+        //    }
 
         //Thomas Only for Test
         currentPlayer = PhotonNetwork.Instantiate(networkPlayer.name, new Vector3(0f, 1.6f, 0f), Quaternion.identity, 0);

@@ -100,8 +100,10 @@
     <Compile Include="Assets\Content\Scripts\EngineBelt.cs" />
     <Compile Include="Assets\Content\Scripts\GameManager.cs" />
     <Compile Include="Assets\Content\Scripts\IconBehaviour.cs" />
+    <Compile Include="Assets\Content\Scripts\IconBehaviour_B.cs" />
     <Compile Include="Assets\Content\Scripts\IconMovement.cs" />
     <Compile Include="Assets\Content\Scripts\NetworkPlayer.cs" />
+    <Compile Include="Assets\Content\Scripts\OnClickFlashRpc.cs" />
     <Compile Include="Assets\Content\Scripts\PhotonCommsManager.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerManager.cs" />

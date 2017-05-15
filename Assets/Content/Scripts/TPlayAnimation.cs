@@ -60,7 +60,11 @@ public class TPlayAnimation : Photon.MonoBehaviour, IPunObservable
 
         if (animations[animCount].animator != null && animations[animCount].animStateName != null)
         {
-            animations[animCount].animator.Play(animations[animCount].animStateName);
+            if (animCount >= 0)
+            {
+                animations[animCount].animator.Play(animations[animCount].animStateName);
+            }
+            
         }
 
 

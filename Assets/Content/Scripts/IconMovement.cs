@@ -3,23 +3,25 @@ using System.Collections;
 
 public class IconMovement : MonoBehaviour
 {
+    #region public variables
     public GameObject startReference;
-    GameObject endReference;
-
     public Vector3 startScale = Vector3.one;
     public Vector3 endScale = Vector3.one;
-
     public AnimationCurve animCurve;
-
     public float delayTime;
     public float AnimationTime;
+    #endregion
 
-    Vector3 startPosition;
-    Vector3 endPosition;
-    float curveTime;
-    float timer = 0f;
+    #region private vairables
+    private GameObject endReference;
+    private Vector3 startPosition;
+    private Vector3 endPosition;
+    private float curveTime;
+    private float timer = 0f;
 
-    bool isActive;
+    private bool isActive;
+    #endregion
+
 
     private void Awake()
     {
@@ -28,66 +30,86 @@ public class IconMovement : MonoBehaviour
         endReference.transform.position = this.gameObject.transform.position;
         endReference.transform.rotation = this.gameObject.transform.rotation;
         this.gameObject.SetActive(false);
+
+        
     }
 
+    private void Start()
+    {
+        //Start position
+        startPosition = startReference.transform.position;
+    }
     private void OnEnable()
     {
         isActive = true;
         endPosition = endReference.transform.position;
-        transform.position = startReference.transform.position;
-        transform.localScale = Vector3.zero;
+        //transform.position = startReference.transform.position;
+        //transform.localScale = Vector3.zero;
         StartCoroutine(showIconAnim());
         StopCoroutine(showIconAnim());
     }
 
     public void disableSelf()
     {
-        if (this.gameObject.GetActive())
-        {
-            isActive = false;
-            StartCoroutine(showIconAnim());
-            StopCoroutine(showIconAnim());
-        }
+        isActive = false;
+        endPosition = startReference.transform.position;
+        //transform.position = endReference.transform.position;
+        StartCoroutine(showIconAnim());
+        StopCoroutine(showIconAnim());
+        Debug.Log("...............IconMovement 01");
     }
     IEnumerator showIconAnim()
     {
         yield return new WaitForSeconds(delayTime);
 
         timer = 0;
-
-        //Start position
-        startPosition = startReference.transform.position;
+        Debug.Log("...............IconMovement 02");
+        
 
         do
         {
             float percent = timer / AnimationTime;
             curveTime = animCurve.Evaluate(percent);
-            if (isActive)
-            {
-                transform.position = Vector3.Lerp(startPosition, endPosition, curveTime);
-                transform.localScale = Vector3.Lerp(startScale, endScale, curveTime);
-            }
-            else
-            {
-                transform.position = Vector3.Lerp(endPosition, startPosition, curveTime);
-                transform.localScale = Vector3.Lerp(endScale, startScale, curveTime);
-            }
-            
+            //if (isActive)
+            //{
+            //    transform.position = Vector3.Lerp(startPosition, endPosition, curveTime);
+            //    transform.localScale = Vector3.Lerp(startScale, endScale, curveTime);
+            //    Debug.Log("...............IconMovement 03");
+            //}
+            //else
+            //{
+            //    transform.position = Vector3.Lerp(endPosition, startPosition, curveTime);
+            //    transform.localScale = Vector3.Lerp(endScale, startScale, curveTime);
+            //    Debug.Log("...............IconMovement 04");
+            //}
+            transform.position = Vector3.Lerp(startPosition, endPosition, curveTime);
+            transform.localScale = Vector3.Lerp(startScale, endScale, curveTime);
+            Debug.Log("...............IconMovement 03");
+
             yield return null;
             timer += Time.deltaTime;
         } while (timer < AnimationTime);
-        if(isActive)
+        //if(isActive)
+        //{
+        //    transform.position = endPosition;
+        //    transform.localScale = endScale;
+        //    Debug.Log("...............IconMovement 05");
+        //}
+        //else
+        //{
+        //    //transform.position = startPosition;
+        //    //transform.localScale = startScale;
+
+        //    this.gameObject.SetActive(false);
+        //    Debug.Log("...............IconMovement 06");
+        //}
+        transform.position = endPosition;
+        transform.localScale = endScale;
+        if (!isActive)
         {
-            transform.position = endPosition;
-            transform.localScale = endScale;
-        }
-        else
-        {
-            transform.position = startPosition;
-            transform.localScale = startScale;
             this.gameObject.SetActive(false);
         }
-        
+
         yield break;
     }
 }

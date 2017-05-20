@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 
-public class IconBehaviour : Photon.MonoBehaviour, IPunObservable
+public class IconBehaviour : MonoBehaviour
 {
 
     public GameObject targetIcon;
@@ -23,51 +23,27 @@ public class IconBehaviour : Photon.MonoBehaviour, IPunObservable
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            ShowHideIcon();
+            //ShowHideIcon();
         }
-
-        //this.photonView.RPC("RPCShowHideIcon", PhotonTargets.AllBufferedViaServer);
-
+        isVisible = (bool)PhotonNetwork.room.CustomProperties["ic01_bool"];
         textLog.text = "isVisible: " + isVisible;
+
+        targetIcon.SetActive(isVisible);
     }
 
-    public void ShowHideIcon()
-    {
-        if (photonView.isMine)
-        {
-            isVisible = !isVisible;
-        }
-        
-    }
-
-    [PunRPC]
-    public void RPCShowHideIcon()
-    {
-        if (isVisible)
-        {
-            //Turn on the target icon
-            targetIcon.SetActive(isVisible);
-            Debug.Log("...............IconBehaviour 01");
-        }
-        else
-        {
-            //Turn off the target icon
-            targetIcon.GetComponentInChildren<IconMovement>().disableSelf();
-            Debug.Log("...............IconBehaviour 02");
-        }
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.isWriting)
-        {
-            stream.SendNext(isVisible);
-            this.photonView.RPC("RPCShowHideIcon", PhotonTargets.All);
-            Debug.Log("...............IconBehaviour 03");
-        }
-        else
-        {
-            this.isVisible = (bool)stream.ReceiveNext();
-        }
-    }
+    //public void ShowHideIcon()
+    //{
+    //    if (isVisible)
+    //    {
+    //        //Turn on the target icon
+    //        targetIcon.SetActive(isVisible);
+    //        Debug.Log("...............IconBehaviour 01");
+    //    }
+    //    else
+    //    {
+    //        //Turn off the target icon
+    //        targetIcon.GetComponentInChildren<IconMovement>().disableSelf();
+    //        Debug.Log("...............IconBehaviour 02");
+    //    }
+    //}
 }

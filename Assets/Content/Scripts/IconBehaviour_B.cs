@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 
-public class IconBehaviour_B : Photon.PunBehaviour
+public class IconBehaviour_B : Photon.PunBehaviour, IPunObservable
 {
 
     public GameObject targetIcon;
@@ -25,31 +25,22 @@ public class IconBehaviour_B : Photon.PunBehaviour
 
     public void T_OnClick()
     {
-        if (photonView.isMine)
-        {
-            isVisibleIcon = !isVisibleIcon;
-        }
-        //this.photonView.RPC("RPCShowHideIcon", PhotonTargets.AllBuffered, isVisibleIcon);
+        this.photonView.RPC("RPCShowHideIcon", PhotonTargets.AllBufferedViaServer, isVisibleIcon);
     }
 
-    public void ShowHideIcon(bool value)
+    [PunRPC]
+    public void RPCShowHideIcon_Start(bool value)
     {
         targetIcon.SetActive(isVisibleIcon);
+        Debug.Log("isVisible 4: " + isVisibleIcon);
     }
-
-    //[PunRPC]
-    //public void RPCShowHideIcon_Start(bool value)
-    //{
-    //    Debug.Log("isVisible 3: " + isVisibleIcon);
-    //    targetIcon.SetActive(isVisibleIcon);
-    //}
 
     [PunRPC]
     public void RPCShowHideIcon(bool value)
     {
-        
+
         Debug.Log("isVisible 2: " + isVisibleIcon);
-        //isVisibleIcon = !isVisibleIcon;
+        isVisibleIcon = !isVisibleIcon;
         Debug.Log("isVisible 3: " + isVisibleIcon);
         targetIcon.SetActive(isVisibleIcon);
         Debug.Log("isVisible 4: " + isVisibleIcon);
@@ -61,7 +52,7 @@ public class IconBehaviour_B : Photon.PunBehaviour
         {
             stream.SendNext(isVisibleIcon);
             Debug.Log("isVisible 4: " + isVisibleIcon);
-            this.photonView.RPC("RPCShowHideIcon", PhotonTargets.AllBuffered, isVisibleIcon);
+            //this.photonView.RPC("RPCShowHideIcon", PhotonTargets.AllBuffered, isVisibleIcon);
         }
         else
         {
@@ -71,6 +62,6 @@ public class IconBehaviour_B : Photon.PunBehaviour
 
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
-        //
+        this.photonView.RPC("RPCShowHideIcon_Start", PhotonTargets.AllBufferedViaServer, isVisibleIcon);
     }
 }

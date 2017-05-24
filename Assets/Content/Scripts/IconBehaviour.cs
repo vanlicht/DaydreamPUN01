@@ -9,9 +9,9 @@ public class IconBehaviour : Photon.MonoBehaviour
     //public static IconBehaviour Instance;
     public GameObject targetIcon;
     private Vector3 startPosition;
-    public Text textLog;
+    //public Text textLog;
 
-    bool isVisible;
+    //bool isVisible;
 
     // Use this for initialization
     void Start ()
@@ -20,28 +20,46 @@ public class IconBehaviour : Photon.MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update ()
-    {
-        isVisible = (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool];
-        textLog.text = "isVisible: " + isVisible;
-    }
+	//void Update ()
+ //   {
+ //       isVisible = (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool];
+ //       textLog.text = "isVisible: " + isVisible;
+ //   }
 
     [PunRPC]
-    public void RPCShowHideIcon()
+    public void RPCShowHideIcon(bool isVisible)
     {
-        isVisible = (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool];
-        Debug.Log("...............bool value inside ShowHideIcon method: " + isVisible);
+        //isVisible = (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool];
+        //Debug.Log("...............bool value inside ShowHideIcon method: " + isVisible);
         if (isVisible)
         {
             //Turn on the target icon
             targetIcon.SetActive(isVisible);
-            Debug.Log("...............IconBehaviour 01");
+            //Debug.Log("...............IconBehaviour 01");
         }
         else
         {
             //Turn off the target icon
             targetIcon.GetComponentInChildren<IconMovement>().disableSelf();
-            Debug.Log("...............IconBehaviour 02");
+            //Debug.Log("...............IconBehaviour 02");
+        }
+    }
+
+    public void ShowHideIcon(bool isVisible)
+    {
+        //isVisible = (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool];
+        //Debug.Log("...............bool value inside ShowHideIcon method: " + isVisible);
+        if (isVisible)
+        {
+            //Turn on the target icon
+            targetIcon.SetActive(isVisible);
+            //Debug.Log("...............IconBehaviour 01");
+        }
+        else
+        {
+            //Turn off the target icon
+            targetIcon.GetComponentInChildren<IconMovement>().disableSelf();
+            //Debug.Log("...............IconBehaviour 02");
         }
     }
 }

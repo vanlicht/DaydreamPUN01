@@ -15,8 +15,11 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class TSetCustomProperties : Photon.PunBehaviour
 {
-    public string[] customePropertyName;
-    public Text textInfo;
+    [Tooltip("Please refer to / edit names in TCustomProperties")]
+    public string propertyKey_int;
+    [Tooltip("Please refer to / edit names in TCustomProperties")]
+    public string propertyKey_bool;
+    //public Text textInfo;
     int value = 0;
     int newValue = 0;
 
@@ -32,17 +35,17 @@ public class TSetCustomProperties : Photon.PunBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        textInfo.text = "Update TCustomProperties.icon01_int:   " + (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]
-            + "\n new value: " + newValue 
-            + "\n (expected) value: " + value
+        //textInfo.text = "Update TCustomProperties.icon01_int:   " + (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]
+        //    + "\n new value: " + newValue 
+        //    + "\n (expected) value: " + value
             
-            + "\n Update TCustomProperties.icon01_bool: " + (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool] 
-            + "\n isActive: " + isActive
-            + "\n newIsActive: " + newIsActive
-            ;
+        //    + "\n Update TCustomProperties.icon01_bool: " + (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool] 
+        //    + "\n isActive: " + isActive
+        //    + "\n newIsActive: " + newIsActive
+        //    ;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("..................................Space pressed");
+            //Debug.Log("..................................Space pressed");
             IncrementVal();
             IncrementBool();
         }
@@ -57,38 +60,45 @@ public class TSetCustomProperties : Photon.PunBehaviour
         }
         Hashtable setValue = new Hashtable();
 
-        //int
-        setValue.Add(TCustomProperties.icon01_int, value);
-
-        //bool
-        setValue.Add(TCustomProperties.icon01_bool, isActive);
+        if(propertyKey_int != null)
+        {
+            //int
+            setValue.Add(propertyKey_int, value);
+        }
+        
+        if(propertyKey_bool != null)
+        {
+            //bool
+            setValue.Add(propertyKey_bool, isActive);
+        }
 
         PhotonNetwork.room.SetCustomProperties(setValue);
-        Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> On Joined Room ... value: " + (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]);
-        Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> On Joined Room ... bool: " + (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]);
+        //Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> On Joined Room ... value: " + (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]);
+        //Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> On Joined Room ... bool: " + (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]);
     }
 
     public override void OnPhotonCustomRoomPropertiesChanged(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
     {
         //Int: update expected value if detected the property change
-        if (propertiesThatChanged.ContainsKey(TCustomProperties.icon01_int))
+        if (propertyKey_int != null && propertiesThatChanged.ContainsKey(propertyKey_int))
         {
-            value = (int)propertiesThatChanged[TCustomProperties.icon01_int];
-            Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... value: " + value);
-            Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]): " + (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]);
+            value = (int)propertiesThatChanged[propertyKey_int];
+            //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... value: " + value);
+            //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]): " + (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]);
             
         }
 
         //Bool: update expected value if detected the property change
-        if (propertiesThatChanged.ContainsKey(TCustomProperties.icon01_bool))
+        if (propertyKey_bool != null && propertiesThatChanged.ContainsKey(propertyKey_bool))
         {
-            isActive = (bool)propertiesThatChanged[TCustomProperties.icon01_bool];
-            Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... isActive: " + isActive);
-            Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]: " + (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]);
+            isActive = (bool)propertiesThatChanged[propertyKey_bool];
+            //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... isActive: " + isActive);
+            //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]: " + (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]);
         }
 
-        //Thomas Test. It works!
-        photonView.RPC("RPCShowHideIcon", PhotonTargets.All);
+        //Thomas
+        //photonView.RPC("RPCShowHideIcon", PhotonTargets.All, isActive);
+        this.gameObject.GetComponent<IconBehaviour>().ShowHideIcon(isActive);
     }
 
     #region Public Methods
@@ -97,17 +107,17 @@ public class TSetCustomProperties : Photon.PunBehaviour
         //SetValue
         newValue = value+1;
         Hashtable setValue = new Hashtable();
-        Debug.Log("...................................N . newValue:" + newValue);
-        setValue.Add(TCustomProperties.icon01_int, newValue);
+        //Debug.Log("...................................N . newValue:" + newValue);
+        setValue.Add(propertyKey_int, newValue);
 
         //Expected Value
         Hashtable expectedValue = new Hashtable();
-        Debug.Log("...................................N . value:" + value);
-        expectedValue.Add(TCustomProperties.icon01_int, value);
+        //Debug.Log("...................................N . value:" + value);
+        expectedValue.Add(propertyKey_int, value);
 
 
         PhotonNetwork.room.SetCustomProperties(setValue, expectedValue, false);
-        Debug.Log("+++++++++++++++++++++++++++++++++++Result of IncrementalVal: " + PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]);
+        //Debug.Log("+++++++++++++++++++++++++++++++++++Result of IncrementalVal: " + PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]);
 
     }
 
@@ -116,18 +126,18 @@ public class TSetCustomProperties : Photon.PunBehaviour
         //SetValue
         newIsActive = !isActive;
         Hashtable setValue = new Hashtable();
-        Debug.Log("...................................N . newIsActive:" + newIsActive);
-        setValue.Add(customePropertyName[1], newIsActive);
+        //Debug.Log("...................................N . newIsActive:" + newIsActive);
+        setValue.Add(propertyKey_bool, newIsActive);
 
         //Expected Value
         Hashtable expectedValue = new Hashtable();
-        Debug.Log("...................................N . isActive:" + isActive);
-        expectedValue.Add(TCustomProperties.icon01_bool, isActive);
+        //Debug.Log("...................................N . isActive:" + isActive);
+        expectedValue.Add(propertyKey_bool, isActive);
 
 
         PhotonNetwork.room.SetCustomProperties(setValue, expectedValue, false);
 
-        Debug.Log("+++++++++++++++++++++++++++++++++++Result of IncrementalBool: " + PhotonNetwork.room.CustomProperties[customePropertyName[1]]);
+        //Debug.Log("+++++++++++++++++++++++++++++++++++Result of IncrementalBool: " + PhotonNetwork.room.CustomProperties[customePropertyName[1]]);
     }
     #endregion
 }

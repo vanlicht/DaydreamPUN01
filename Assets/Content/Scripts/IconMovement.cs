@@ -58,7 +58,7 @@ public class IconMovement : MonoBehaviour
             transform.position = endReference.transform.position;
             StartCoroutine(showIconAnim());
             StopCoroutine(showIconAnim());
-            Debug.Log("...............IconMovement 01");
+            //Debug.Log("...............IconMovement 01");
         }
         
     }
@@ -67,7 +67,7 @@ public class IconMovement : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
 
         timer = 0;
-        Debug.Log("...............IconMovement 02");
+        //Debug.Log("...............IconMovement 02");
 
 
         do
@@ -78,13 +78,13 @@ public class IconMovement : MonoBehaviour
             {
                 transform.position = Vector3.Lerp(startPosition, endPosition, curveTime);
                 transform.localScale = Vector3.Lerp(startScale, endScale, curveTime);
-                Debug.Log("...............IconMovement 03");
+                //Debug.Log("...............IconMovement 03");
             }
             else
             {
                 transform.position = Vector3.Lerp(endPosition, startPosition, curveTime);
                 transform.localScale = Vector3.Lerp(endScale, startScale, curveTime);
-                Debug.Log("...............IconMovement 04");
+                //Debug.Log("...............IconMovement 04");
             }
 
             yield return null;
@@ -94,7 +94,7 @@ public class IconMovement : MonoBehaviour
         {
             transform.position = endPosition;
             transform.localScale = endScale;
-            Debug.Log("...............IconMovement 05");
+            //Debug.Log("...............IconMovement 05");
         }
         else
         {
@@ -102,7 +102,7 @@ public class IconMovement : MonoBehaviour
             transform.localScale = startScale;
 
             this.gameObject.SetActive(false);
-            Debug.Log("...............IconMovement 06");
+            //Debug.Log("...............IconMovement 06");
             
         }
         yield break;

@@ -333,7 +333,7 @@ ModelImporter:
     - serializedVersion: 16
       name: T03_Expand
       takeName: Take 001
-      firstFrame: 11
+      firstFrame: 150
       lastFrame: 185
       wrapMode: 0
       orientationOffsetY: 0

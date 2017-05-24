@@ -30,6 +30,9 @@ public class TSetCustomProperties : Photon.PunBehaviour
     bool isActive;
     bool newIsActive;
 
+    public static int Output_int;
+    public static bool Output_bool;
+
 
 	// Use this for initialization
 	void Start ()
@@ -44,7 +47,7 @@ public class TSetCustomProperties : Photon.PunBehaviour
             + "\n new value: " + newValue
             + "\n (expected) value: " + value
 
-            + "\n Update TCustomProperties.icon01_bool: " + (bool)PhotonNetwork.room.CustomProperties[propertyKey_int]
+            + "\n Update TCustomProperties.icon01_bool: " + (bool)PhotonNetwork.room.CustomProperties[propertyKey_bool]
             + "\n isActive: " + isActive
             + "\n newIsActive: " + newIsActive
             ;
@@ -88,32 +91,30 @@ public class TSetCustomProperties : Photon.PunBehaviour
         if (propertyKey_int != null && propertiesThatChanged.ContainsKey(propertyKey_int))
         {
             value = (int)propertiesThatChanged[propertyKey_int];
-            
+            Output_int = (int)propertiesThatChanged[propertyKey_int];
             //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... value: " + value);
             //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]): " + (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]);
-
+            
         }
 
         //Bool: update expected value if detected the property change
         if (propertyKey_bool != null && propertiesThatChanged.ContainsKey(propertyKey_bool))
         {
             isActive = (bool)propertiesThatChanged[propertyKey_bool];
+            Output_bool = (bool)propertiesThatChanged[propertyKey_bool];
             //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... isActive: " + isActive);
             //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]: " + (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]);
         }
 
-        if(propertyKey_bool != null)
+        if (this.gameObject.GetComponent<IconBehaviour>() != null) //check this status is important since this method is included in this script, when applied to different object this component might not be attached.
         {
-            //photonView.RPC("RPCShowHideIcon", PhotonTargets.All, isActive);
             this.gameObject.GetComponent<IconBehaviour>().ShowHideIcon(isActive);
         }
-        if(propertyKey_int != null)
+
+        if (this.gameObject.GetComponent<TAnimationPlay>() != null) //check this status is important...
         {
             this.gameObject.GetComponent<TAnimationPlay>().OnPlayAnimation(value);
         }
-        
-
-
     }
 
     #region Public Methods
@@ -122,7 +123,7 @@ public class TSetCustomProperties : Photon.PunBehaviour
         //SetValue
         if (loopThreshold > 1 && value == loopThreshold-1)
         {
-            newValue = 0;
+            newValue = 1; //here is for animation, assuming state 0 is only for the beginning idle mode and not need to return to; otherwise, set this newValue = 0 here.
         }
         else
         {

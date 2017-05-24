@@ -90,9 +90,9 @@ ModelImporter:
     4300016: EG_Base_geo
     7400000: T01_rise
     7400002: T02_Rotate
-    7400004: T02_Expand
-    7400006: T03_BackToDefault
-    7400008: T04_lower
+    7400004: T03_Expand
+    7400006: T04_BackToDefault
+    7400008: T05_lower
     9500000: //RootNode
     13700000: Batter_geo
     13700002: EG_Back
@@ -130,6 +130,108 @@ ModelImporter:
       name: T01_rise
       takeName: Take 001
       firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DriverInfo_grp
+        weight: 1
+      - path: DriverInfo_grp/Belt_anim_info
+        weight: 1
+      - path: Engine_Root
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Base_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Back_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Front_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Front_jnt/Fan_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_L_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_L_jnt/EG_Battery_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_01_main
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_01_main/Cog_01_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_02_main
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_02_main/Cog_02_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_03_main
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_03_main/Cog_03_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_04_main
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_04_main/Cog_04_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_05_main
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_05_main/Cog_05_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_06_main
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_06_main/Cog_06_jnt
+        weight: 1
+      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_R_jnt
+        weight: 1
+      - path: Mesh_grp
+        weight: 1
+      - path: Mesh_grp/Batter_geo
+        weight: 1
+      - path: Mesh_grp/EG_Back
+        weight: 1
+      - path: Mesh_grp/EG_Base_geo
+        weight: 1
+      - path: Mesh_grp/EG_belt_geo
+        weight: 1
+      - path: Mesh_grp/EG_CoreCombined_geo
+        weight: 1
+      - path: Mesh_grp/EG_Left_Back_geo
+        weight: 1
+      - path: Mesh_grp/EG_Right_geo
+        weight: 1
+      - path: Mesh_grp/Fan_geo
+        weight: 1
+      - path: Mesh_grp/filter_geo
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: T02_Rotate
+      takeName: Take 001
+      firstFrame: 25
       lastFrame: 150
       wrapMode: 0
       orientationOffsetY: 0
@@ -229,9 +331,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: T02_Expand
+      name: T03_Expand
       takeName: Take 001
-      firstFrame: 151
+      firstFrame: 11
       lastFrame: 185
       wrapMode: 0
       orientationOffsetY: 0
@@ -331,112 +433,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: T03_BackToDefault
+      name: T04_BackToDefault
       takeName: Take 001
-      firstFrame: 186
+      firstFrame: 215
       lastFrame: 280
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: DriverInfo_grp
-        weight: 1
-      - path: DriverInfo_grp/Belt_anim_info
-        weight: 1
-      - path: Engine_Root
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Base_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Back_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Front_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Front_jnt/Fan_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_L_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_L_jnt/EG_Battery_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_01_main
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_01_main/Cog_01_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_02_main
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_02_main/Cog_02_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_03_main
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_03_main/Cog_03_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_04_main
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_04_main/Cog_04_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_05_main
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_05_main/Cog_05_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_06_main
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_Mid_jnt/EG_Mid_sub_jnt/Cog_06_main/Cog_06_jnt
-        weight: 1
-      - path: Engine_Root/EG_Global_jnt/EG_Core_jnt/EG_R_jnt
-        weight: 1
-      - path: Mesh_grp
-        weight: 1
-      - path: Mesh_grp/Batter_geo
-        weight: 1
-      - path: Mesh_grp/EG_Back
-        weight: 1
-      - path: Mesh_grp/EG_Base_geo
-        weight: 1
-      - path: Mesh_grp/EG_belt_geo
-        weight: 1
-      - path: Mesh_grp/EG_CoreCombined_geo
-        weight: 1
-      - path: Mesh_grp/EG_Left_Back_geo
-        weight: 1
-      - path: Mesh_grp/EG_Right_geo
-        weight: 1
-      - path: Mesh_grp/Fan_geo
-        weight: 1
-      - path: Mesh_grp/filter_geo
-        weight: 1
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: T04_lower
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

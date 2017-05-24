@@ -115,6 +115,7 @@
     <Compile Include="Assets\Content\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerNameInput.cs" />
     <Compile Include="Assets\Content\Scripts\SendTextColor.cs" />
+    <Compile Include="Assets\Content\Scripts\TAnimationPlay.cs" />
     <Compile Include="Assets\Content\Scripts\TCustomProperties.cs" />
     <Compile Include="Assets\Content\Scripts\TPlayAnimation.cs" />
     <Compile Include="Assets\Content\Scripts\TRoomProperty.cs" />

@@ -17,14 +17,19 @@ public class TSetCustomProperties : Photon.PunBehaviour
 {
     [Tooltip("Please refer to / edit names in TCustomProperties")]
     public string propertyKey_int;
+
+    [Tooltip("The number used for loopable count limit/ count amount, e.g. number of animations to playback before loop back to start")]
+    public int loopThreshold; //effective if count is > 1
+
     [Tooltip("Please refer to / edit names in TCustomProperties")]
     public string propertyKey_bool;
-    //public Text textInfo;
+    public Text textInfo;
     int value = 0;
     int newValue = 0;
 
     bool isActive;
     bool newIsActive;
+
 
 	// Use this for initialization
 	void Start ()
@@ -35,14 +40,14 @@ public class TSetCustomProperties : Photon.PunBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //textInfo.text = "Update TCustomProperties.icon01_int:   " + (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]
-        //    + "\n new value: " + newValue 
-        //    + "\n (expected) value: " + value
-            
-        //    + "\n Update TCustomProperties.icon01_bool: " + (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool] 
-        //    + "\n isActive: " + isActive
-        //    + "\n newIsActive: " + newIsActive
-        //    ;
+        textInfo.text = "Update TCustomProperties.icon01_int:   " + (int)PhotonNetwork.room.CustomProperties[propertyKey_int]
+            + "\n new value: " + newValue
+            + "\n (expected) value: " + value
+
+            + "\n Update TCustomProperties.icon01_bool: " + (bool)PhotonNetwork.room.CustomProperties[propertyKey_int]
+            + "\n isActive: " + isActive
+            + "\n newIsActive: " + newIsActive
+            ;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Debug.Log("..................................Space pressed");
@@ -83,9 +88,10 @@ public class TSetCustomProperties : Photon.PunBehaviour
         if (propertyKey_int != null && propertiesThatChanged.ContainsKey(propertyKey_int))
         {
             value = (int)propertiesThatChanged[propertyKey_int];
+            
             //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... value: " + value);
             //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]): " + (int)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_int]);
-            
+
         }
 
         //Bool: update expected value if detected the property change
@@ -96,16 +102,33 @@ public class TSetCustomProperties : Photon.PunBehaviour
             //Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ OnPhotonCustomRoomPropertiesChanged ... (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]: " + (bool)PhotonNetwork.room.CustomProperties[TCustomProperties.icon01_bool]);
         }
 
-        //Thomas
-        //photonView.RPC("RPCShowHideIcon", PhotonTargets.All, isActive);
-        this.gameObject.GetComponent<IconBehaviour>().ShowHideIcon(isActive);
+        if(propertyKey_bool != null)
+        {
+            //photonView.RPC("RPCShowHideIcon", PhotonTargets.All, isActive);
+            this.gameObject.GetComponent<IconBehaviour>().ShowHideIcon(isActive);
+        }
+        if(propertyKey_int != null)
+        {
+            this.gameObject.GetComponent<TAnimationPlay>().OnPlayAnimation(value);
+        }
+        
+
+
     }
 
     #region Public Methods
     public void IncrementVal()
     {
         //SetValue
-        newValue = value+1;
+        if (loopThreshold > 1 && value == loopThreshold-1)
+        {
+            newValue = 0;
+        }
+        else
+        {
+            newValue = value + 1;
+        }
+        
         Hashtable setValue = new Hashtable();
         //Debug.Log("...................................N . newValue:" + newValue);
         setValue.Add(propertyKey_int, newValue);

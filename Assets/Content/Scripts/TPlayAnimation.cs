@@ -6,25 +6,14 @@ using UnityEngine.UI;
 public class TPlayAnimation : Photon.MonoBehaviour, IPunObservable
 {
     public anim[] animations;
-    //public GameObject[] showObjects;
-    //public GameObject[] hideObjects;
     int animLength;
-    //int showLength;
-    //int hideLength;
     int animCount;
-    //int showCount;
-    //int hideCount;
-
     public Text engineText;
 
     void Start()
     {
         animLength = animations.Length;
-        //showLength = showObjects.Length;
-        //hideLength = hideObjects.Length;
         animCount = -1;
-        //showCount = 0;
-        //hideCount = 0;
     }
 
     private void Update()
@@ -62,7 +51,7 @@ public class TPlayAnimation : Photon.MonoBehaviour, IPunObservable
         {
             if (animCount >= 0)
             {
-                animations[animCount].animator.Play(animations[animCount].animStateName);
+                animations[animCount].animator.Play(animations[animCount].animStateName, 0);
             }
             
         }

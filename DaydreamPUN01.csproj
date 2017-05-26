@@ -119,6 +119,8 @@
     <Compile Include="Assets\Content\Scripts\TCustomProperties.cs" />
     <Compile Include="Assets\Content\Scripts\TPlayAnimation.cs" />
     <Compile Include="Assets\Content\Scripts\TRoomProperty.cs" />
+    <Compile Include="Assets\Content\Scripts\TSCP_Engine.cs" />
+    <Compile Include="Assets\Content\Scripts\TSCP_Icon.cs" />
     <Compile Include="Assets\Content\Scripts\TSetCustomProperties.cs" />
     <Compile Include="Assets\Content\Scripts\TestSphere.cs" />
     <Compile Include="Assets\Content\Scripts\ThomasTeleportController.cs" />

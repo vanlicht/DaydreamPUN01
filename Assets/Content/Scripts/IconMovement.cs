@@ -29,7 +29,7 @@ public class IconMovement : MonoBehaviour
         endReference = new GameObject(this.name + "_end");
         endReference.transform.position = this.gameObject.transform.position;
         endReference.transform.rotation = this.gameObject.transform.rotation;
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);   //if set this, the hash won't work.
     }
 
     private void OnEnable()

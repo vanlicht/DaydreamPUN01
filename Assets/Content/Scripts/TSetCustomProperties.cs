@@ -25,14 +25,14 @@ public class TSetCustomProperties : Photon.PunBehaviour
     public string propertyKey_bool;
     public Text textInfo;
     
-    public static int value = 0;
-    public static int newValue = 0;
+    public int value { get; set; }
+    public int newValue { get; set; }
 
-    public static bool isActive;
-    public static bool newIsActive;
+    public bool isActive { get; set; }
+    public bool newIsActive { get; set; }
 
-    public static int Output_int;
-    public static bool Output_bool;
+    public int Output_int { get; set; }
+    public bool Output_bool { get; set; }
 
 
 	// Use this for initialization
@@ -44,14 +44,7 @@ public class TSetCustomProperties : Photon.PunBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        textInfo.text = "Update TCustomProperties.icon01_int:   " + (int)PhotonNetwork.room.CustomProperties[propertyKey_int]
-            + "\n new value: " + newValue
-            + "\n (expected) value: " + value
-
-            + "\n Update TCustomProperties.icon01_bool: " + (bool)PhotonNetwork.room.CustomProperties[propertyKey_bool]
-            + "\n isActive: " + isActive
-            + "\n newIsActive: " + newIsActive
-            ;
+        TTextInformation();
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Debug.Log("..................................Space pressed");
@@ -72,6 +65,7 @@ public class TSetCustomProperties : Photon.PunBehaviour
         if(propertyKey_int != null)
         {
             //int
+            value = -1;
             setValue.Add(propertyKey_int, value);
         }
         
@@ -191,6 +185,18 @@ public class TSetCustomProperties : Photon.PunBehaviour
         PhotonNetwork.room.SetCustomProperties(setValue, expectedValue, false);
 
         //Debug.Log("+++++++++++++++++++++++++++++++++++Result of IncrementalBool: " + PhotonNetwork.room.CustomProperties[customePropertyName[1]]);
+    }
+
+    public virtual void TTextInformation()
+    {
+        textInfo.text = "Update TCustomProperties.icon01_int: " + (int)PhotonNetwork.room.CustomProperties[propertyKey_int]
+            + "\n new value: " + newValue
+            + "\n (expected) value: " + value
+
+            + "\n Update TCustomProperties.icon01_bool: " + (bool)PhotonNetwork.room.CustomProperties[propertyKey_bool]
+            + "\n isActive: " + isActive
+            + "\n newIsActive: " + newIsActive
+            ;
     }
     #endregion
 }

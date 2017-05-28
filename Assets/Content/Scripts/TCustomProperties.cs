@@ -9,5 +9,6 @@ public class TCustomProperties
     public static string icon01_bool = "ic01_bool";
     public static string icon02_bool = "ic02_bool";
     public static string engine_int = "engine_int";
+    public static string icon02b_int = "ic02b_int";
 
 }
